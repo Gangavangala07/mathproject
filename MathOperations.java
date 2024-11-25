@@ -1,6 +1,4 @@
-iiiiii
-			//                                                                             }
-			//
+		//
 			//                                                                                 // Method to subtract two numbers
 			//                                                                                     public static int subtract(int a, int b) {
 			//                                                                                             return a - b;
