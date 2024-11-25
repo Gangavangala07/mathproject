@@ -1,3 +1,5 @@
+import java.util.InputMismatchException;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class MathOperations {
@@ -43,31 +45,37 @@ public class MathOperations {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        try {
+            // Input for multiplication
+            System.out.print("Enter two numbers to multiply: ");
+            int num1 = scanner.nextInt();
+            int num2 = scanner.nextInt();
+            System.out.println("Multiplication result: " + multiply(num1, num2));
 
-        // Input for multiplication
-        System.out.print("Enter two numbers to multiply: ");
-        int num1 = scanner.nextInt();
-        int num2 = scanner.nextInt();
-        System.out.println("Multiplication result: " + multiply(num1, num2));
+            // Input for division
+            System.out.print("Enter two numbers to divide (numerator and denominator): ");
+            int numerator = scanner.nextInt();
+            int denominator = scanner.nextInt();
+            System.out.println("Division result: " + divide(numerator, denominator));
 
-        // Input for division
-        System.out.print("Enter two numbers to divide (numerator and denominator): ");
-        int numerator = scanner.nextInt();
-        int denominator = scanner.nextInt();
-        System.out.println("Division result: " + divide(numerator, denominator));
+            // Input for subtraction
+            System.out.print("Enter two numbers to subtract (minuend and subtrahend): ");
+            int minuend = scanner.nextInt();
+            int subtrahend = scanner.nextInt();
+            System.out.println("Subtraction result: " + subtract(minuend, subtrahend));
 
-        // Input for subtraction
-        System.out.print("Enter two numbers to subtract (minuend and subtrahend): ");
-        int minuend = scanner.nextInt();
-        int subtrahend = scanner.nextInt();
-        System.out.println("Subtraction result: " + subtract(minuend, subtrahend));
-
-        // Input for prime numbers range
-        System.out.print("Enter the range to display prime numbers (start and end): ");
-        int start = scanner.nextInt();
-        int end = scanner.nextInt();
-        displayPrimes(start, end);
-
-        scanner.close();
+            // Input for prime numbers range
+            System.out.print("Enter the range to display prime numbers (start and end): ");
+            int start = scanner.nextInt();
+            int end = scanner.nextInt();
+            displayPrimes(start, end);
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input. Please enter a valid number.");
+        } catch (NoSuchElementException e) {
+            System.out.println("No input available.");
+        } finally {
+            scanner.close();
+        }
     }
 }
+
