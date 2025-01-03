@@ -275,3 +275,38 @@ public class MathOperations {
         return true;
     }
 }
+
+
+
+
+
+public class ShapePrinter {
+
+    public static void main(String[] args) {
+        System.out.println("Printing a Rectangle:");
+        printRectangle(5, 10);
+
+        System.out.println("\nPrinting a Triangle:");
+        printTriangle(5);
+    }
+
+    // Method to print a rectangle
+    public static void printRectangle(int height, int width) {
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    // Method to print a triangle
+    public static void printTriangle(int height) {
+        for (int i = 1; i <= height; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
